@@ -1,6 +1,6 @@
 
 exports.up = function (knex, Promise) {
-    return knex.schema.createTable('register', tbl => {
+    return knex.schema.createTable('users', tbl => {
         tbl.increments();
 
         tbl
@@ -12,10 +12,10 @@ exports.up = function (knex, Promise) {
             .string('password', 128)
             .notNullable()
             .unique();
-    });
+    })
 };
 
 exports.down = function (knex, Promise) {
     return knex.schema
-        .dropTableIfExists('register');
+        .dropTableIfExists('users');
 };
