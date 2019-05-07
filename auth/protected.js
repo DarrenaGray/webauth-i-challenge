@@ -18,7 +18,7 @@ function protected(req, res, next) {
                 res.status(500).json(err);
             });
     } else {
-        res.status(400).json({ message: "Please provide valid username and password." });
+        res.status(400).json({ message: "You shall not pass!" });
     };
 };
 
