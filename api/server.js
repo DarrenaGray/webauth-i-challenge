@@ -1,11 +1,14 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const session = require('express-session');
+
+const sessionConfig = require('../session/session-config');
+const usersRouter = require('../users/users-router');
 
 const server = express();
 
-const usersRouter = require('../users/users-router');
-
+server.use(session(sessionConfig));
 server.use(express.json());
 server.use(helmet());
 server.use(morgan('dev'));
